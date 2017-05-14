@@ -1,8 +1,7 @@
 <?php
     if ($_GET['a'] == 1)
     {
-        echo $_SERVER['REQUEST_URI'];
-        //header("Location: " . $_SERVER['REQUEST_URI']);
+        header("Location: " . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
         exit();
     }
 
