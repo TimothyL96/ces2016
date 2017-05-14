@@ -25,7 +25,7 @@
 
         echo 'dataarray: ';
         echo "<pre>";
-        echo $dataarray;
+        echo $source_cut;
         echo '</pre>';
     }
 ?>
