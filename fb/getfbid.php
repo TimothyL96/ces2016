@@ -1,5 +1,5 @@
 <?php
-    if (isset($_POST['fbusername']))
+    if (isset($_POST['submit']))
     {
         $username = $_POST['fbusername'];
         $link = "https://www.facebook.com/";
@@ -24,6 +24,7 @@
     <body>
         <form action="" method="post">
             <input type="text" name="fbusername" placeholder="Enter FB username here:"/>
+            <input type="submit" name="submit" value="Search ID" />
         </form>
     </body>
 </html>
