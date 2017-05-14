@@ -23,33 +23,7 @@
         $source_cut = '{' . $source_cut . '}';
         $dataarray = json_decode($source_cut);
 
-        echo 'dataarray: ';
-        $error = json_last_error();
-
-        switch (json_last_error()) {
-            case JSON_ERROR_NONE:
-                echo ' - No errors';
-                break;
-            case JSON_ERROR_DEPTH:
-                echo ' - Maximum stack depth exceeded';
-                break;
-            case JSON_ERROR_STATE_MISMATCH:
-                echo ' - Underflow or the modes mismatch';
-                break;
-            case JSON_ERROR_CTRL_CHAR:
-                echo ' - Unexpected control character found';
-                break;
-            case JSON_ERROR_SYNTAX:
-                echo ' - Syntax error, malformed JSON';
-                break;
-            case JSON_ERROR_UTF8:
-                echo ' - Malformed UTF-8 characters, possibly incorrectly encoded';
-                break;
-            default:
-                echo ' - Unknown error';
-                break;
-        }
-        echo $error;
+        echo 'dataarray: ' . $source_cut;
         echo "<pre>";
         echo $dataarray;
         echo '</pre>';
@@ -58,7 +32,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.72</h2>
+        <h2>Get Facebook ID from username v2.73</h2>
     </head>
     <body>
         <form action="" method="post">
