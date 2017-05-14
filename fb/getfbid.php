@@ -19,7 +19,7 @@
         //$pos_curly = strpos($source_cut, "}");
         //$source_cut = substr($source_cut, $pos_curly);
 
-        echo '<textarea>';
+        echo "<textarea rows=\"6\" cols=\"50\">";
         echo $source_cut;
         echo '</textarea>';
     }
@@ -27,7 +27,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v1.4</h2>
+        <h2>Get Facebook ID from username v1.5</h2>
     </head>
     <body>
         <form action="" method="post">
