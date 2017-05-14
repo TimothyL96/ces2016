@@ -18,16 +18,16 @@
 
         //$pos_curly = strpos($source_cut, "}");
         //$source_cut = substr($source_cut, $pos_curly);
-
+/*
         echo '<pre>';
         echo $source_cut;
-        echo '</pre>';
+        echo '</pre>';*/
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v1.3</h2>
+        <h2>Get Facebook ID from username v1.4</h2>
     </head>
     <body>
         <form action="" method="post">
