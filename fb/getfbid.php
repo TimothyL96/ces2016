@@ -27,7 +27,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.91</h2>
+        <h2>Get Facebook ID from username v2.92</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
@@ -37,7 +37,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
             $(document).ready( function() {
-                if (<?= (!empty($datarray))?1:0 ?>)
+                if (<?= (!empty($dataarray))?1:0 ?>)
                 {
                     alert("<?= $dataarray['entity_id']; ?>");
                 }
