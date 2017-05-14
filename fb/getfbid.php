@@ -14,7 +14,7 @@
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $source = curl_exec( $ch );
 
-        $pos_entity = strpos($source, "\"entity_id\"");
+        $pos_entity = strpos($source, '"entity_id"');
         $source_cut = substr($source, $pos_entity);
 
         $pos_curly = strpos($source_cut, "}");
