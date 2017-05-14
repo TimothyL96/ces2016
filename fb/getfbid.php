@@ -17,15 +17,15 @@
         if ($pos_facebookcom !== FALSE)
         {
             $username = substr($username, $pos_facebookcom + 13);
-            echo 'facebook.com: ' . $username;
+            echo 'facebook.com: "' . $username . '"';
             exit();
         }
 
         $pos_fbcom = strpos($username, "fb.com");
         if ($pos_fbcom !== FALSE)
         {
-            $username = substr($username, $pos_fbcom + 7, 0);
-            echo 'fb.com: ' . $username;
+            $username = substr($username, $pos_fbcom + 7);
+            echo 'fb.com: "' . $username . '"';
             exit();
         }
 
