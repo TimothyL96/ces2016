@@ -7,7 +7,8 @@
 
         $headers = array(
             'https' => array(
-                'follow_location' => false,
+                'method' => 'get',
+                'follow_location' => true,
                 'header' => "User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36"
             )
         );
@@ -30,7 +31,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v1.8</h2>
+        <h2>Get Facebook ID from username v1.9</h2>
     </head>
     <body>
         <form action="" method="post">
