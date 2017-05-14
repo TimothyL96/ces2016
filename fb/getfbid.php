@@ -20,17 +20,18 @@
         $pos_curly = strpos($source_cut, "}");
         $source_cut = substr($source_cut, 0, $pos_curly);
 
-        echo 'Search entity_id result: ' . $pos_entity . "\n";
-        echo 'Search } result: ' . $pos_curly . "\n";
-        echo "<textarea rows=\"6\" cols=\"50\">";
-        echo $source_cut;
-        echo '</textarea>';
+        $source_cut = '{' . $source_cut . '}';
+        $dataarray = json_decode($source_cut);
+
+        echo "<pre>";
+        echo $dataarray;
+        echo '</pre>';
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.5</h2>
+        <h2>Get Facebook ID from username v2.6</h2>
     </head>
     <body>
         <form action="" method="post">
