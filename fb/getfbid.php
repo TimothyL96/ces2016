@@ -17,7 +17,7 @@
         if ($pos_facebookcom !== FALSE)
         {
             $username = substr($username, $pos_facebookcom + 13, 0);
-            echo $username;
+            echo 'facebook.com: ' . $username;
             exit();
         }
 
@@ -25,7 +25,7 @@
         if ($pos_fbcom !== FALSE)
         {
             $username = substr($username, $pos_fbcom + 7, 0);
-            echo $username;
+            echo 'fb.com: ' . $username;
             exit();
         }
 
@@ -54,7 +54,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v3.07</h2>
+        <h2>Get Facebook ID from username v3.08</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
