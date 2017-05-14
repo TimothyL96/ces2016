@@ -12,7 +12,7 @@
         );
         $context = stream_context_create($headers);
         $source = file_get_contents($url, false, $context);
-        var_dump($http_respone_header);
+        var_dump($http_response_header);
 
         $pos_entity = strpos($source, "\"entity_id\"");
         $source_cut = substr($source, $pos_entity);
@@ -29,7 +29,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v1.6</h2>
+        <h2>Get Facebook ID from username v1.7</h2>
     </head>
     <body>
         <form action="" method="post">
