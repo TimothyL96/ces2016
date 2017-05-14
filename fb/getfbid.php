@@ -24,14 +24,23 @@
 
         echo 'Search entity_id result: ' . $pos_entity . "\n";
         echo "<textarea rows=\"6\" cols=\"50\">";
-        echo $source_cut;
+       // echo $source_cut;
         echo '</textarea>';
+
+        $ch = curl_init($url);
+        curl_setopt( $ch, CURLOPT_POST, false );
+        curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.7.12) Gecko/20050915 Firefox/1.0.7");
+        curl_setopt( $ch, CURLOPT_HEADER, false );
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+        $data = curl_exec( $ch );
+        echo $data;
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v1.9</h2>
+        <h2>Get Facebook ID from username v2.0</h2>
     </head>
     <body>
         <form action="" method="post">
