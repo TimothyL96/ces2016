@@ -1,5 +1,5 @@
 <?php
-    if ($_GET['a'] === 1)
+    if ($_GET['a'] == 1)
     {
         header("Location: " . $_SERVER['REQUEST_URI']);
     }
@@ -20,12 +20,16 @@
         if ($pos_facebookcom !== FALSE)
         {
             $username = substr($username, $pos_facebookcom + 13, 0);
+            echo $username;
+            exit();
         }
 
         $pos_fbcom = strpos($username, "fb.com");
         if ($pos_fbcom !== FALSE)
         {
             $username = substr($username, $pos_fbcom + 7, 0);
+            echo $username;
+            exit();
         }
 
         $link = "https://www.facebook.com/";
@@ -53,7 +57,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v3.00</h2>
+        <h2>Get Facebook ID from username v3.01</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
