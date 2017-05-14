@@ -1,7 +1,33 @@
 <?php
+    if ($_GET['a'] === 1)
+    {
+        header("Location: " . $_SERVER['REQUEST_URI']);
+    }
+
     if (isset($_POST['submit']) && !empty($_POST['fbusername']))
     {
         $username = $_POST['fbusername'];
+
+        $pos_profileid = strpos($username, "profile.php?id=");
+        if ($pos_profileid !== FALSE)
+        {
+            $id = substr($username, $pos_profileid + 15, 0);
+            echo 'ID already exist: ' . $id;
+            exit();
+        }
+
+        $pos_facebookcom = strpos($username, "facebook.com");
+        if ($pos_facebookcom !== FALSE)
+        {
+            $username = substr($username, $pos_facebookcom + 13, 0);
+        }
+
+        $pos_fbcom = strpos($username, "fb.com");
+        if ($pos_fbcom !== FALSE)
+        {
+            $username = substr($username, $pos_fbcom + 7, 0);
+        }
+
         $link = "https://www.facebook.com/";
         $url = $link . $username;
 
@@ -27,16 +53,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.93</h2>
+        <h2>Get Facebook ID from username v3.00</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
-            <input type="text" name="fbusername" placeholder="Enter FB username or profile URL here:"/>
+            <input type="text" name="fbusername" placeholder="Enter FB username or profile URL here:" width="50px"/>
             <input type="submit" name="submit" value="Find ID" />
         </form>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
-            $(document).ready( function() {
+            $(document).ready( function()
+            {
                 if (<?= (!empty($dataarray)?1:0); ?>)
                 {
                     alert("<?= $dataarray['entity_id']; ?>");
