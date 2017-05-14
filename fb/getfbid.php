@@ -23,6 +23,7 @@
         $source_cut = '{' . $source_cut . '}';
         $dataarray = json_decode($source_cut);
 
+        echo 'dataarray: ';
         echo "<pre>";
         echo $dataarray;
         echo '</pre>';
