@@ -22,22 +22,17 @@
 
         $source_cut = '{' . $source_cut . '}';
         $dataarray = json_decode($source_cut, TRUE);
-
-        echo 'dataarray: ' . $source_cut;
-        echo "<pre>";
-        print_r($dataarray);
-        echo '</pre>';
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.79</h2>
+        <h2>Get Facebook ID from username v2.8</h2>
     </head>
     <body>
         <form action="" method="post">
-            <input type="text" name="fbusername" placeholder="Enter FB username here:"/>
-            <input type="submit" name="submit" value="Search ID" />
+            <input type="text" name="fbusername" placeholder="Enter FB username or profile URL here:"/>
+            <input type="submit" name="submit" value="Find ID" />
         </form>
     </body>
 </html>
