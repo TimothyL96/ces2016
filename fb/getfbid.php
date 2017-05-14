@@ -17,16 +17,12 @@
         if ($pos_facebookcom !== FALSE)
         {
             $username = substr($username, $pos_facebookcom + 13);
-            echo 'facebook.com: "' . $username . '"';
-            exit();
         }
 
         $pos_fbcom = strpos($username, "fb.com");
         if ($pos_fbcom !== FALSE)
         {
             $username = substr($username, $pos_fbcom + 7);
-            echo 'fb.com: "' . $username . '"';
-            exit();
         }
 
         $link = "https://www.facebook.com/";
@@ -54,7 +50,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v3.10</h2>
+        <h2>Get Facebook ID from username v3.20</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
