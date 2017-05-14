@@ -21,7 +21,7 @@
         $source_cut = substr($source_cut, 0, $pos_curly);
 
         $source_cut = '{' . $source_cut . '}';
-        $dataarray = json_decode($source_cut);
+        $dataarray = json_decode($source_cut, TRUE);
 
         echo 'dataarray: ' . $source_cut;
         echo "<pre>";
@@ -32,7 +32,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.73</h2>
+        <h2>Get Facebook ID from username v2.74</h2>
     </head>
     <body>
         <form action="" method="post">
