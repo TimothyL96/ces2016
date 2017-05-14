@@ -1,4 +1,7 @@
 <?php
+    $requrl = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $requrl = $_SERVER['HTTP_REFERER'] . $requrl;
+
     if (isset($_POST['submit']) && !empty($_POST['fbusername']))
     {
         $username = $_POST['fbusername'];
@@ -52,7 +55,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v3.04</h2>
+        <h2>Get Facebook ID from username v3.05</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
@@ -66,15 +69,9 @@
                 if (<?= (!empty($dataarray)?1:0); ?>)
                 {
                     alert("<?= $dataarray['entity_id']; ?>");
+                    window.location = <?= $requrl; ?>;
                 }
             });
         </script>
     </body>
 </html>
-<?php
-    if ($_GET['a'] == 1)
-    {
-        header("Location: " . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
-        exit();
-    }
-?>
