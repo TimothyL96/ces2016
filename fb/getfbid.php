@@ -18,7 +18,7 @@
         $source_cut = substr($source, $pos_entity);
 
         $pos_curly = strpos($source_cut, "}");
-        $source_cut = substr($source_cut, $pos_curly);
+        $source_cut = substr($source_cut, 0, $pos_curly);
 
         echo 'Search entity_id result: ' . $pos_entity . "\n";
         echo 'Search } result: ' . $pos_curly . "\n";
@@ -30,7 +30,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.4</h2>
+        <h2>Get Facebook ID from username v2.5</h2>
     </head>
     <body>
         <form action="" method="post">
