@@ -4,7 +4,7 @@
         $username = $_POST['fbusername'];
         $link = "https://www.facebook.com/";
         $url = $link . $username;
-
+/*
         $headers = array(
             'https' => array(
                 'method' => 'get',
@@ -17,15 +17,15 @@
         var_dump($http_response_header);
 
         $pos_entity = strpos($source, "\"entity_id\"");
-        $source_cut = substr($source, $pos_entity);
+        $source_cut = substr($source, $pos_entity);*/
 
         //$pos_curly = strpos($source_cut, "}");
         //$source_cut = substr($source_cut, $pos_curly);
 
-        echo 'Search entity_id result: ' . $pos_entity . "\n";
-        echo "<textarea rows=\"6\" cols=\"50\">";
+       // echo 'Search entity_id result: ' . $pos_entity . "\n";
+       // echo "<textarea rows=\"6\" cols=\"50\">";
        // echo $source_cut;
-        echo '</textarea>';
+       // echo '</textarea>';
 
         $ch = curl_init($url);
         curl_setopt( $ch, CURLOPT_POST, false );
@@ -34,13 +34,13 @@
         curl_setopt( $ch, CURLOPT_HEADER, false );
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
         $data = curl_exec( $ch );
-        echo $data;
+        echo 'dat: ' . $data;
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.0</h2>
+        <h2>Get Facebook ID from username v2.1</h2>
     </head>
     <body>
         <form action="" method="post">
