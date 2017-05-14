@@ -25,15 +25,14 @@
 
         echo 'dataarray: ' . $source_cut;
         echo "<pre>";
-        echo $dataarray['entity_id'];
+        echo $dataarray;
         echo '</pre>';
-        echo count($dataarray);
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.77</h2>
+        <h2>Get Facebook ID from username v2.78</h2>
     </head>
     <body>
         <form action="" method="post">
