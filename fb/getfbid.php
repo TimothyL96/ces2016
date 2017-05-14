@@ -18,10 +18,10 @@
 
         //$pos_curly = strpos($source_cut, "}");
         //$source_cut = substr($source_cut, $pos_curly);
-/*
-        echo '<pre>';
+
+        echo '<textarea>';
         echo $source_cut;
-        echo '</pre>';*/
+        echo '</textarea>';
     }
 ?>
 <!DOCTYPE html>
