@@ -54,7 +54,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v3.06</h2>
+        <h2>Get Facebook ID from username v3.07</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
@@ -68,7 +68,7 @@
                 if (<?= (!empty($dataarray)?1:0); ?>)
                 {
                     alert("<?= $dataarray['entity_id']; ?>");
-                    window.location = <?= $requrl; ?>;
+                    window.location = "<?= $requrl; ?>";
                 }
             });
         </script>
