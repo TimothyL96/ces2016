@@ -1,5 +1,5 @@
 <?php
-    if (isset($_POST['submit']) || !empty($_POST['fbusername']))
+    if (isset($_POST['submit']) && !empty($_POST['fbusername']))
     {
         $username = $_POST['fbusername'];
         $link = "https://www.facebook.com/";
@@ -18,14 +18,14 @@
 
         $pos_curly = strpos($source_cut, "}");
         $source_cut = substr($source_cut, $pos_curly);
-
-        echo $source_cut;*/
+        */
+        echo $source_cut;
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username</h2>
+        <h2>Get Facebook ID from username v1</h2>
     </head>
     <body>
         <form action="" method="post">
