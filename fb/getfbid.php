@@ -7,6 +7,7 @@
 
         $headers = array(
             'https' => array(
+                'follow_location' = > false,
                 'header' => "User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36"
             )
         );
