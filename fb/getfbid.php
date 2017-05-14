@@ -1,7 +1,9 @@
 <?php
     if ($_GET['a'] == 1)
     {
+        echo $_SERVER['REQUEST_URI'];
         header("Location: " . $_SERVER['REQUEST_URI']);
+        exit();
     }
 
     if (isset($_POST['submit']) && !empty($_POST['fbusername']))
@@ -57,7 +59,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v3.01</h2>
+        <h2>Get Facebook ID from username v3.02</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
