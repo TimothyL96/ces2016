@@ -1,6 +1,5 @@
 <?php
-    $requrl = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $requrl = $_SERVER['HTTP_REFERER'] . $requrl;
+    $requrl = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
 
     if (isset($_POST['submit']) && !empty($_POST['fbusername']))
     {
@@ -55,7 +54,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v3.05</h2>
+        <h2>Get Facebook ID from username v3.06</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
