@@ -13,19 +13,19 @@
         $context = stream_context_create($headers);
         $source = file_get_contents($url, false, $context);
 
-        /*$pos_entity = strpos($source, "\"entity_id\"");
+        $pos_entity = strpos($source, "\"entity_id\"");
         $source_cut = substr($source, $pos_entity);
 
         $pos_curly = strpos($source_cut, "}");
         $source_cut = substr($source_cut, $pos_curly);
-        */
+
         echo $source_cut;
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v1</h2>
+        <h2>Get Facebook ID from username v1.1</h2>
     </head>
     <body>
         <form action="" method="post">
