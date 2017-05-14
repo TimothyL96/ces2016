@@ -25,14 +25,14 @@
 
         echo 'dataarray: ' . $source_cut;
         echo "<pre>";
-        echo $dataarray;
+        print_r($dataarray);
         echo '</pre>';
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.78</h2>
+        <h2>Get Facebook ID from username v2.79</h2>
     </head>
     <body>
         <form action="" method="post">
