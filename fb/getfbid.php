@@ -35,12 +35,13 @@
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
         $data = curl_exec( $ch );
         echo 'dat: ' . $data;
+        echo 'curl error: ' . curl_error($ch);
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.1</h2>
+        <h2>Get Facebook ID from username v2.2</h2>
     </head>
     <body>
         <form action="" method="post">
