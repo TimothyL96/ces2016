@@ -27,12 +27,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.8</h2>
+        <h2>Get Facebook ID from username v2.9</h2>
     </head>
     <body>
-        <form action="" method="post">
+        <form action="getfbid.php?a=1" method="post">
             <input type="text" name="fbusername" placeholder="Enter FB username or profile URL here:"/>
             <input type="submit" name="submit" value="Find ID" />
         </form>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+            $(document).ready( function() {
+                if (<?= (!empty($datarray))?true:false ?>)
+                {
+                    alert("<?= $dataarray['entity_id']; ?>");
+                }
+            });
+        </script>
     </body>
 </html>
