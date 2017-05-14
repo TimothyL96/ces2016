@@ -27,12 +27,13 @@
         echo "<pre>";
         echo $dataarray;
         echo '</pre>';
+        echo count($dataarray);
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.74</h2>
+        <h2>Get Facebook ID from username v2.75</h2>
     </head>
     <body>
         <form action="" method="post">
