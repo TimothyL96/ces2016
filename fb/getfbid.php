@@ -24,7 +24,8 @@
         $dataarray = json_decode($source_cut);
 
         echo 'dataarray: ';
-        echo $json_errors[json_last_error()];
+        $error = json_last_error();
+        echo $error;
         echo "<pre>";
         echo $dataarray;
         echo '</pre>';
@@ -33,7 +34,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.7</h2>
+        <h2>Get Facebook ID from username v2.71</h2>
     </head>
     <body>
         <form action="" method="post">
