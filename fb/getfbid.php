@@ -30,19 +30,21 @@
         $ch = curl_init($url);
         curl_setopt( $ch, CURLOPT_POST, false );
         curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
-        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.7.12) Gecko/20050915 Firefox/1.0.7");
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36");
         curl_setopt( $ch, CURLOPT_HEADER, false );
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $data = curl_exec( $ch );
+        echo "<textarea rows=\"6\" cols=\"50\">";
         echo 'dat: ' . $data;
+        echo '</textarea>';
         echo 'curl error: ' . curl_error($ch);
     }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.2</h2>
+        <h2>Get Facebook ID from username v2.3</h2>
     </head>
     <body>
         <form action="" method="post">
