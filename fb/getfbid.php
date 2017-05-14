@@ -15,7 +15,7 @@
         $source = curl_exec( $ch );
 
         $pos_entity = strpos($source, "\"entity_id\"");
-        $source_cut = substr($source, $pos_entity);*/
+        $source_cut = substr($source, $pos_entity);
 
         $pos_curly = strpos($source_cut, "}");
         $source_cut = substr($source_cut, $pos_curly);
@@ -30,7 +30,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v2.3</h2>
+        <h2>Get Facebook ID from username v2.4</h2>
     </head>
     <body>
         <form action="" method="post">
