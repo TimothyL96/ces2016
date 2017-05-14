@@ -1,5 +1,5 @@
 <?php
-    if (isset($_POST['submit']))
+    if (isset($_POST['submit']) || !empty($_POST['fbusername']))
     {
         $username = $_POST['fbusername'];
         $link = "https://www.facebook.com/";
