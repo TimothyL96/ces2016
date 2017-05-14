@@ -8,7 +8,7 @@
         $pos_profileid = strpos($username, "profile.php?id=");
         if ($pos_profileid !== FALSE)
         {
-            $id = substr($username, $pos_profileid + 15, 0);
+            $id = substr($username, $pos_profileid + 15);
             echo 'ID already exist: ' . $id;
             exit();
         }
@@ -16,7 +16,7 @@
         $pos_facebookcom = strpos($username, "facebook.com");
         if ($pos_facebookcom !== FALSE)
         {
-            $username = substr($username, $pos_facebookcom + 13, 0);
+            $username = substr($username, $pos_facebookcom + 13);
             echo 'facebook.com: ' . $username;
             exit();
         }
@@ -54,11 +54,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>Get Facebook ID from username v3.08</h2>
+        <h2>Get Facebook ID from username v3.09</h2>
     </head>
     <body>
         <form action="getfbid.php?a=1" method="post">
-            <input type="text" name="fbusername" placeholder="Enter FB username or profile URL here:" width="50px"/>
+            <input type="text" name="fbusername" placeholder="Enter FB username or profile URL here:" width="50"/>
             <input type="submit" name="submit" value="Find ID" />
         </form>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
