@@ -41,7 +41,7 @@
 </head>
 <body style="text-align: center;">
     <form action="" method="post">
-        <input type="text" placeholder="Profile URL" name="fburl">
+        <input type="text" placeholder="Enter Facebook Profile URL or Username" size="50" name="fburl">
         <input type="submit" name="submit" value="Submit"/>
     </form>
     <div name="fburldisplay" style="margin: 50px;">
