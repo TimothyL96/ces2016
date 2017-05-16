@@ -26,6 +26,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Facebook Profile Scanner</title>
     <h1>
         Scanner v1.0
     </h1>
