@@ -5,7 +5,6 @@
 	 * Date: 16/5/2017
 	 * Time: 5:20 PM
 	 */
-
 	define("VIEW", TRUE);
 	require_once 'getfbid.php';
 
