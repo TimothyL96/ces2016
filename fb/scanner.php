@@ -8,13 +8,16 @@
 	require_once 'getfbid.php';
 	if (isset($_POST['submit']))
 	{
-		$fburl = getfbid($_POST['fburl']);
+		$id = getfbid($_POST['fburl']);
 
-		$picurl = "https://www.facebook.com/search/{$fburl}/photos-by";
+		$picurl = "https://www.facebook.com/search/{$id}/photos-by";
 		//$picurl = "https://www.facebook.com/search/{$fburl}/photos-by{time}";
 
-        $likesurl = "https://www.facebook.com/search/{$fburl}/photos-liked/intersect";
+        $likesurl = "https://www.facebook.com/search/{$id}/photos-liked/intersect";
         //$likesurl = "https://www.facebook.com/search/{age}/{target}/{relationship}/{gender}/{id}/photos-liked{time}/intersect";
+
+        $friendsurl = "https://www.facebook.com/search/{$id}/friends/intersect";
+        //$friendsurl = "https://www.facebook.com/search/{age}/{gender}/{relationship}/{id}/friends/intersect";
 	}
 ?>
 <!DOCTYPE html>
@@ -30,7 +33,7 @@
         <input type="submit" name="submit" value="Submit"/>
     </form>
     <div name="fburldisplay">
-        <p><?= (isset($fburl))? $fburl: 'None'?></p>
+        <p><?= (isset($id))? $id: 'None'?></p>
     </div>
     <div>
         <a href="<?= (isset($picurl))? $picurl: ''?>">Picture</a>
