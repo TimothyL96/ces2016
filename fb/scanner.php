@@ -44,26 +44,26 @@
         <input type="text" placeholder="Profile URL" name="fburl">
         <input type="submit" name="submit" value="Submit"/>
     </form>
-    <div name="fburldisplay">
-        <p>Facebook ID<?= (isset($id))? ' Found: ' . $id: ': None'?></p>
+    <div name="fburldisplay" style="margin: 50px;">
+        <a href="https://www.facebook.com/<?= (isset($id))?$id: ''?>" target="_blank">Facebook ID<?= (isset($id))? ' Found: ' . $id: ': None'?></a>
     </div>
     <div>
-        <a href="<?= (isset($picurl))? $picurl: ''?>">Picture</a>
+        <a href="<?= (isset($picurl))? $picurl: ''?>" target="_blank">Picture</a>
     </div>
     <div>
-        <a href="<?= (isset($likesurl))? $likesurl: ''?>">Likes</a>
+        <a href="<?= (isset($likesurl))? $likesurl: ''?>" target="_blank">Likes</a>
     </div>
     <div>
-        <a href="<?= (isset($friendsurl))? $friendsurl: ''?>">Friends</a>
+        <a href="<?= (isset($friendsurl))? $friendsurl: ''?>" target="_blank">Friends</a>
     </div>
     <div>
-        <a href="<?= (isset($tag_photourl))? $tag_photourl: ''?>">Photos Tagged</a>
+        <a href="<?= (isset($tag_photourl))? $tag_photourl: ''?>" target="_blank">Photos Tagged</a>
     </div>
     <div>
-        <a href="<?= (isset($tag_videourl))? $tag_videourl: ''?>">Videos Tagged</a>
+        <a href="<?= (isset($tag_videourl))? $tag_videourl: ''?>" target="_blank">Videos Tagged</a>
     </div>
     <div>
-        <a href="<?= (isset($tag_storyurl))? $tag_storyurl: ''?>">Stories Tagged</a>
+        <a href="<?= (isset($tag_storyurl))? $tag_storyurl: ''?>" target="_blank">Stories Tagged</a>
     </div>
 </body>
 </html>
