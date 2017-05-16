@@ -1,7 +1,7 @@
 <?php
 	if ((!defined("VIEW")))
 	{
-		header("Refresh: 4; url= scanner.php");
+		header("Refresh: 5; url= scanner.php");
 		echo 'Error 404: Forbidden Page! Redirecting ....';
 		exit();
 	}
