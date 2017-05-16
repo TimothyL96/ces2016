@@ -1,4 +1,10 @@
 <?php
+	if ((!defined("VIEW")))
+	{
+		header("Location: scanner.php");
+		exit();
+	}
+
     function getfbid($fburl)
     {
         if (isset($fburl) && !empty($fburl))
