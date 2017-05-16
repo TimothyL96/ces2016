@@ -9,6 +9,12 @@
 	if (isset($_POST['submit']))
 	{
 		$fburl = getfbid($_POST['fburl']);
+
+		$picurl = "https://www.facebook.com/search/{$fburl}/photos-by";
+		//$picurl = "https://www.facebook.com/search/{$fburl}/photos-by{time}";
+
+        $likesurl = "https://www.facebook.com/search/{$fburl}/photos-liked/intersect";
+        //$likesurl = "https://www.facebook.com/search/{age}/{target}/{relationship}/{gender}/{id}/photos-liked{time}/intersect";
 	}
 ?>
 <!DOCTYPE html>
@@ -27,10 +33,10 @@
         <p><?= (isset($fburl))? $fburl: 'None'?></p>
     </div>
     <div>
-        <a href="https://www.facebook.com/search/{id}/photos-by{time}">Picture</a>
+        <a href="<?= (isset($picurl))? $picurl: ''?>">Picture</a>
     </div>
     <div>
-        <a href="https://www.facebook.com/search/{target}/{gender}/{age}/{relationship}/{id}/{subject}-commented{time}/intersect">Likes</a>
+        <a href="<?= (isset($likesurl))? $likesurl: ''?>">Likes</a>
     </div>
 </body>
 </html>
