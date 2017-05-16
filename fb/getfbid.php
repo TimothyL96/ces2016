@@ -4,6 +4,7 @@
 		ob_start();
 		echo 'Error 404: Forbidden Page! Redirecting ....';
 		ob_end_flush();
+		ob_flush();
 		sleep(5);
 		header("Location: scanner.php");
 		exit();
