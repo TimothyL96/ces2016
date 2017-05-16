@@ -41,6 +41,9 @@
     <div>
         <a href="<?= (isset($likesurl))? $likesurl: ''?>">Likes</a>
     </div>
+    <div>
+        <a href="<?= (isset($friendsurl))? $friendsurl: ''?>">Friends</a>
+    </div>
 </body>
 </html>
 
