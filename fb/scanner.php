@@ -39,7 +39,7 @@
 		</form>
 
 		<div name="fburldisplay" style="margin: 50px;">
-			<a href="https://www.facebook.com/<?= (isset($id)) ? $id : '' ?>" target="_blank">Facebook ID<?= (isset($id)) ? ' Found: ' : ': ' ?></a><?= (isset($id)) ? $id : '' ?>
+			<a href="https://www.facebook.com/<?= (isset($id)) ? $id : '' ?>" target="_blank">Facebook ID<?= (isset($id)) ? ' Found:' : ':' ?></a><?= (isset($id)) ? ' ' . $id : ' ' ?>
 		</div>
 		<div>
 			<a href="<?= (isset($picurl)) ? $picurl : '' ?>" target="_blank">Picture</a>
