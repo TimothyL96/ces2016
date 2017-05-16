@@ -30,13 +30,13 @@
         Scanner v1.0
     </h1>
 </head>
-<body>
+<body style="text-align: center;">
     <form action="" method="post">
         <input type="text" placeholder="Profile URL" name="fburl">
         <input type="submit" name="submit" value="Submit"/>
     </form>
     <div name="fburldisplay">
-        <p><?= (isset($id))? $id: 'None'?></p>
+        <p>Facebook ID<?= (isset($id))? ' Found: ' . $id: ': None'?></p>
     </div>
     <div>
         <a href="<?= (isset($picurl))? $picurl: ''?>">Picture</a>
