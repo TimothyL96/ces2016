@@ -1,6 +1,8 @@
 <?php
 	if ((!defined("VIEW")))
 	{
+		echo '';
+		sleep(5);
 		header("Location: scanner.php");
 		exit();
 	}
