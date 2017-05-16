@@ -1,7 +1,7 @@
 <?php
 	if ((!defined("VIEW")))
 	{
-		echo '';
+		echo 'Error 404: Forbidden Page! Redirecting ...';
 		sleep(5);
 		header("Location: scanner.php");
 		exit();
