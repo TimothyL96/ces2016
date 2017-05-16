@@ -51,6 +51,3 @@
             return FALSE;
         }
     }
-    $fburl = "https://facebook.com/timothy0707";
-    $fbid = getfbid($fburl);
-?>
