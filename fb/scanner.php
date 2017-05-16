@@ -20,6 +20,15 @@
 
         $friendsurl = "https://www.facebook.com/search/{$id}/friends/intersect";
         //$friendsurl = "https://www.facebook.com/search/{age}/{gender}/{relationship}/{id}/friends/intersect";
+
+		$tag_photourl = "https://www.facebook.com/search/{$id}/photos-of/intersect";
+		//"https://www.facebook.com/search/{target}/{gender}/{age}/{relationship}/{id}/photos-of{time}/intersect";
+
+        $tag_videourl = "https://www.facebook.com/search/{$id}/videos-of/intersect";
+        //$tag_videourl = "https://www.facebook.com/search/{target}/{gender}/{age}/{relationship}/{id}/videos-of{time}/intersect";
+
+        $tag_storyurl = "https://www.facebook.com/search/{$id}/stories-tagged/intersect";
+        //"https://www.facebook.com/search/{target}/{gender}/{age}/{relationship}/{id}/stories-tagged{time}/intersect";
 	}
 ?>
 <!DOCTYPE html>
@@ -27,7 +36,7 @@
 <head>
     <title>Facebook Profile Scanner</title>
     <h1>
-        Scanner v1.0
+        Scanner v1.2
     </h1>
 </head>
 <body style="text-align: center;">
@@ -46,6 +55,15 @@
     </div>
     <div>
         <a href="<?= (isset($friendsurl))? $friendsurl: ''?>">Friends</a>
+    </div>
+    <div>
+        <a href="<?= (isset($tag_photourl))? $tag_photourl: ''?>">Photos Tagged</a>
+    </div>
+    <div>
+        <a href="<?= (isset($tag_videourl))? $tag_videourl: ''?>">Videos Tagged</a>
+    </div>
+    <div>
+        <a href="<?= (isset($tag_storyurl))? $tag_storyurl: ''?>">Stories Tagged</a>
     </div>
 </body>
 </html>
