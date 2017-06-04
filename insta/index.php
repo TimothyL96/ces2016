@@ -109,6 +109,7 @@
 		$usermedia = $owndatareturn[0];
 		$userfollows = $owndatareturn[1];
 		$userfollower = $owndatareturn[2];
+		print_r($owndatareturn);
 
 		include_once 'insta.php';
 	}
