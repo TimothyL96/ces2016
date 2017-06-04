@@ -8,8 +8,7 @@
 		header("Location: {$url}");
 		exit();
 	}
-
-	if (isset($_SESSION['code']))
+	else if (isset($_SESSION['code']))
 	{
 		require 'config.php';
 
@@ -31,6 +30,26 @@
 		$userfullname = $curlreturn['user']['full_name'];
 		$userbio = $curlreturn['user']['bio'];
 		$userwebsite = $curlreturn['user']['website'];
+	}
+	else if (isset($_POST['finduser']))
+	{
+
+	}
+	else if (isset($_POST['recentmedia']))
+	{
+
+	}
+	else if (isset($_POST['recentmediauser']))
+	{
+
+	}
+	else if (isset($_POST['recentlikes']))
+	{
+
+	}
+	else if (isset($_POST['searchuser']))
+	{
+
 	}
 
 	function curldata($urlcurl, $data = array())
@@ -59,11 +78,14 @@
 
 	if (!isset($code))
 		include_once 'login.php';
-
-	if (!empty($accesstoken))
+	else if (!empty($accesstoken))
 	{
 		$curlreturn = curldata("https://api.instagram.com/v1/users/self/?access_token={$accesstoken}");
-		print_r($curlreturn);
+		$usermedia = $curlreturn['data']['counts']['media'];
+		$userfollows = $curlreturn['data']['counts']['follows'];
+		$userfollower = $curlreturn['data']['counts']['followed_by'];
+
+		include_once 'insta.php';
 
 		session_destroy();
 		$_SESSION = array();
