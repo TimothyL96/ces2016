@@ -1,6 +1,4 @@
 <?php
-	require_once 'api.php';
-
 	if (isset($_GET['code']))
 		$code = $_GET['code'];
 
@@ -14,8 +12,8 @@
 		<title>Instagram API TEST</title>
 	</head>
 	<body>
-		<form method="GET" action="">
-			<input type="submit" name="submit" value="LOGIN Instagram" onclick="<?= loginInsta(); ?>">
+		<form method="GET" action="api.php">
+			<input type="submit" name="login" value="LOGIN Instagram"">
 		</form>
 	</body>
 </html>
