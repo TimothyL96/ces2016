@@ -40,7 +40,7 @@
 	}
 	else if (isset($_POST['finduser']))
 	{
-		$curlreturn = curldata("https://api.instagram.com/v1/users/199662589/?access_token={$accesstoken}");
+		$curlreturn = curldata("https://api.instagram.com/v1/users/259220806/?access_token={$accesstoken}");
 		echo '<pre>';
 		print_r($curlreturn);
 		echo '</pre>';
