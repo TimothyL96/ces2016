@@ -1,9 +1,9 @@
 <?php
 	if (isset($_GET['code']))
+	{
 		$code = $_GET['code'];
-
-	if (isset($_GET['code']))
 		echo $code;
+	}
 ?>
 
 <!DOCTYPE html>
