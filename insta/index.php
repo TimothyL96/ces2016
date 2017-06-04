@@ -90,9 +90,10 @@
 	function owndata()
 	{
 		$curlreturn = curldata("https://api.instagram.com/v1/users/self/?access_token={$accesstoken}");
-		$usermedia = $curlreturn['data']['counts']['media'];
-		$userfollows = $curlreturn['data']['counts']['follows'];
-		$userfollower = $curlreturn['data']['counts']['followed_by'];
+		$owndatareturn[] = $curlreturn['data']['counts']['media'];
+		$owndatareturn[] = $curlreturn['data']['counts']['follows'];
+		$owndatareturn[] = $curlreturn['data']['counts']['followed_by'];
+		return $owndatareturn;
 	}
 
 	if (!isset($code))
@@ -101,6 +102,10 @@
 	}
 	else if (!empty($accesstoken))
 	{
-		owndata();
+		$owndatareturn = owndata();
+		$usermedia = $owndatareturn[0];
+		$userfollows = $owndatareturn[1];
+		$userfollower = $owndatareturn[2];
+
 		include_once 'insta.php';
 	}
