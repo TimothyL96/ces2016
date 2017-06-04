@@ -23,9 +23,9 @@
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_POSTFIELDS => $data
 		);
-		curl_setopt_array($ch, $options);
+		curl_setopt_array($accesstoken, $options);
 
-		echo 'passed22222 ';
+		echo 'passed   22222 ';
 		$result = curl_exec($accesstoken);
 		curl_close($accesstoken);
 
