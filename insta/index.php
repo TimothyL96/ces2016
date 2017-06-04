@@ -16,11 +16,13 @@
 
 		$accesstoken = $curlreturn['access_token'];
 		$userid = $curlreturn['user']['id'];
-		$userid = $curlreturn['user']['username'];
-		$userid = $curlreturn['user']['profile_picture'];
-		$userid = $curlreturn['user']['full_name'];
-		$userid = $curlreturn['user']['bio'];
-		$userid = $curlreturn['user']['website'];
+		$username = $curlreturn['user']['username'];
+		$userprofilepic = $curlreturn['user']['profile_picture'];
+		$userfullname = $curlreturn['user']['full_name'];
+		$userbio = $curlreturn['user']['bio'];
+		$userwebsite = $curlreturn['user']['website'];
+
+		echo $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
 	}
 
 	function curldata($urlcurl = "", $data = array())
