@@ -6,10 +6,10 @@
 		$code = $_GET['code'];
 		$urlaccesstoken = "https://api.instagram.com/oauth/access_token";
 		$urlaccesstoken .= '?';
-		$urlaccesstoken .= 'client_id={$clientID}&';
-		$urlaccesstoken .= 'client_secret={$clientSecret}&';
-		$urlaccesstoken .= 'grant_type=authorization_code&';
-		$urlaccesstoken .= 'code={$code}';
+		$urlaccesstoken .= "client_id={$clientID}&";
+		$urlaccesstoken .= "client_secret={$clientSecret}&";
+		$urlaccesstoken .= "grant_type=authorization_code&";
+		$urlaccesstoken .= "code={$code}";
 
 		$accesstoken = curl_init();
 		$options = array(
