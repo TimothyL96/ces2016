@@ -29,8 +29,8 @@
 		if (curl_errno($accesstoken))
 			die("Error: 0x0000TK. Contact administrator.");
 
-		echo 'passed4';
-		print_r($result);
+		echo 'passed4  4';
+		echo $result;
 	}
 	if (!isset($code))
 		include_once 'login.php';
