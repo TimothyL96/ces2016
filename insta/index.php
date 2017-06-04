@@ -12,6 +12,7 @@
 		$urlaccesstoken .= "grant_type=authorization_code&";
 		$urlaccesstoken .= "code={$code}";
 
+		echo 'passed1';
 		$accesstoken = curl_init();
 		$options = array(
 			CURLOPT_URL => $urlaccesstoken,
@@ -20,12 +21,15 @@
 		);
 		curl_setopt_array($ch, $options);
 
+		echo 'passed2';
 		$result = curl_exec($accesstoken);
 		curl_close($accesstoken);
 
+		echo 'passed3';
 		if (curl_errno($accesstoken))
 			die("Error: 0x0000TK. Contact administrator.");
 
+		echo 'passed4';
 		print_r($result);
 	}
 	if (!isset($code))
