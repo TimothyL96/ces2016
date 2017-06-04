@@ -95,7 +95,6 @@
 	function owndata($accesstoken)
 	{
 		$curlreturn = curldata("https://api.instagram.com/v1/users/self/?access_token={$accesstoken}");
-		print_r($curlreturn);
 		$owndatareturn[] = $curlreturn['data']['counts']['media'];
 		$owndatareturn[] = $curlreturn['data']['counts']['follows'];
 		$owndatareturn[] = $curlreturn['data']['counts']['followed_by'];
