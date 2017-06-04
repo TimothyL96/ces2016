@@ -1,6 +1,7 @@
 <?php
 	require_once 'config.php';
 
+	echo 'in api';
 	if (isset($_POST['login']))
 	{
 		echo 'done';
