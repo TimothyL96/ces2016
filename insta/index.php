@@ -90,6 +90,7 @@
 		if (curl_errno($curlinsta))
 			die("Error: 0x000CRL. Contact administrator.");
 
+		echo 'url: $curlinsta';
 		echo '<pre>';
 		print_r($result);
 		echo '</pre>';
