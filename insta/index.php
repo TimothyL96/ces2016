@@ -4,6 +4,9 @@
 	if (empty($accesstoken) && !empty($_SESSION['accesstoken']))
 		$accesstoken = $_SESSION['accesstoken'];
 
+	if (empty($code) && !empty($_SESSION['code']))
+		$code = $_SESSION['code'];
+
 	if (isset($_GET['code']))
 	{
 		$_SESSION['code'] = $_GET['code'];
@@ -37,7 +40,7 @@
 	}
 	else if (isset($_POST['finduser']))
 	{
-		$curlreturn = curldata("https://api.instagram.com/v1/users/1480938607/?access_token={$accesstoken}");
+		$curlreturn = curldata("https://api.instagram.com/v1/users/259220806/?access_token={$accesstoken}");
 		echo '<pre>';
 		print_r($curlreturn);
 		echo '</pre>';
