@@ -62,6 +62,8 @@
 
 	}else if (isset($_POST['logout']))
 	{
+		$accesstoken = "";
+		$code = "";
 		session_destroy();
 		$_SESSION = array();
 	}
