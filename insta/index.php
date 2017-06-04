@@ -113,6 +113,7 @@
 	else if (!empty($accesstoken))
 	{
 		$owndatareturn = owndata($accesstoken);
+		$username = $_SESSION['$username'];
 		$usermedia = $owndatareturn[0];
 		$userfollows = $owndatareturn[1];
 		$userfollower = $owndatareturn[2];
