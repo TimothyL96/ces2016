@@ -63,6 +63,7 @@
 
 		print_r($jsonresult);
 		session_destroy();
+		$_SESSION = array();
 	}
 
 	function curldata($urlcurl, $data = array())
