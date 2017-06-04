@@ -33,15 +33,15 @@
 	}
 	else if (isset($_POST['finduser']))
 	{
-
+		echo 'find user set';
 	}
 	else if (isset($_POST['recentmedia']))
 	{
-
+		echo 'recent media set';
 	}
 	else if (isset($_POST['recentmediauser']))
 	{
-
+		echo 'recent media user set';
 	}
 	else if (isset($_POST['recentlikes']))
 	{
