@@ -1,6 +1,6 @@
 <?php
-	session_destroy();
 	session_start();
+
 	if (isset($_GET['code']))
 	{
 		$_SESSION['code'] = $_GET['code'];
@@ -8,6 +8,7 @@
 		header("Location: {$url}");
 		exit();
 	}
+
 	if (isset($_SESSION['code']))
 	{
 		require 'config.php';
