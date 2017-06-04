@@ -30,7 +30,7 @@
 		$userbio = $curlreturn['user']['bio'];
 		$userwebsite = $curlreturn['user']['website'];
 
-		echo "access token : " . $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
+		echo "acccess token : " . $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
 	}
 
 	if (!isset($code))
