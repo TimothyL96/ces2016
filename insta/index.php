@@ -92,9 +92,9 @@
 		return $jsonresult;
 	}
 
-	function owndata()
+	function owndata($accesstoken)
 	{
-		$curlreturn = curldata("https://api.instagram.com/v1/users/self/?access_token={$this->$accesstoken}");
+		$curlreturn = curldata("https://api.instagram.com/v1/users/self/?access_token={$accesstoken}");
 		print_r($curlreturn);
 		$owndatareturn[] = $curlreturn['data']['counts']['media'];
 		$owndatareturn[] = $curlreturn['data']['counts']['follows'];
@@ -108,7 +108,7 @@
 	}
 	else if (!empty($accesstoken))
 	{
-		$owndatareturn = owndata();
+		$owndatareturn = owndata($accesstoken);
 		$usermedia = $owndatareturn[0];
 		$userfollows = $owndatareturn[1];
 		$userfollower = $owndatareturn[2];
