@@ -3,7 +3,7 @@
 
 	if (isset($_POST['login']))
 	{
-		$urllogin = "https://api.instagram.com/oauth/authorize/?client_id={$clientID}&redirect_uri={$clientRedirect}&response_type=code&scope=public_content";
+		$urllogin = "https://api.instagram.com/oauth/authorize/?client_id={$clientID}&redirect_uri={$clientRedirect}&response_type=code&scope=public_content+likes";
 		header("Location: {$urllogin}");
 		exit();
 	}
