@@ -33,6 +33,7 @@
 		$_SESSION['accesstoken'] = $accesstoken;
 		$userid = $curlreturn['user']['id'];
 		$username = $curlreturn['user']['username'];
+		$_SESSION['$username'] = $accesstoken;
 		$userprofilepic = $curlreturn['user']['profile_picture'];
 		$userfullname = $curlreturn['user']['full_name'];
 		$userbio = $curlreturn['user']['bio'];
@@ -40,7 +41,8 @@
 	}
 	else if (isset($_POST['finduser']))
 	{
-		$curlreturn = curldata("https://api.instagram.com/v1/users/259220806/?access_token={$accesstoken}");
+		//$curlreturn = curldata("https://api.instagram.com/v1/users/259220806/?access_token={$accesstoken}");
+		$curlreturn = curldata("https://www.instagram/{$_SESSION['$username']}/media");
 		echo '<pre>';
 		print_r($curlreturn);
 		echo '</pre>';
