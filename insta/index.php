@@ -87,10 +87,11 @@
 		curl_setopt_array($curlinsta, $options);
 
 		$result = curl_exec($curlinsta);
-		curl_close($curlinsta);
 
 		if (curl_errno($curlinsta))
 			die("Error: 0x000CRL. Contact administrator.");
+
+		curl_close($curlinsta);
 
 		echo "url: $urlcurl";
 		echo '<pre>';
