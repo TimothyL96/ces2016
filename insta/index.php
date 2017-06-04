@@ -3,6 +3,7 @@
 	{
 		require 'config.php';
 
+		echo 'passed';
 		$code = $_GET['code'];
 		$urlaccesstoken = "https://api.instagram.com/oauth/access_token";
 		$urlaccesstoken .= '?';
