@@ -22,7 +22,7 @@
 		$userbio = $curlreturn['user']['bio'];
 		$userwebsite = $curlreturn['user']['website'];
 
-		echo "aaccess token : " . $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
+		echo "access token : " . $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
 	}
 
 	if (!isset($code))
@@ -38,7 +38,8 @@
 		$options = array(
 			CURLOPT_URL => $urlcurl,
 			CURLOPT_HEADER => false,
-			CURLOPT_RETURNTRANSFER => true
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_POSTFIELDS => $data
 		);
 		curl_setopt_array($curlinsta, $options);
 
