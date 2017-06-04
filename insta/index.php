@@ -1,6 +1,9 @@
 <?php
 	session_start();
 
+	if (empty($accesstoken) && !empty($_SESSION['accesstoken']))
+		$accesstoken = $_SESSION['accesstoken'];
+
 	if (isset($_GET['code']))
 	{
 		$_SESSION['code'] = $_GET['code'];
@@ -8,7 +11,7 @@
 		header("Location: {$url}");
 		exit();
 	}
-	else if (isset($_SESSION['code']))
+	else if (isset($_SESSION['code']) && empty($accesstoken))
 	{
 		require 'config.php';
 
@@ -32,32 +35,32 @@
 		$userbio = $curlreturn['user']['bio'];
 		$userwebsite = $curlreturn['user']['website'];
 	}
-	else if (!empty($_SESSION['accesstoken']))
+	else if (isset($_POST['finduser']))
 	{
-		$accesstoken = $_SESSION['accesstoken'];
-		if (isset($_POST['finduser']))
-		{
-			$curlreturn = curldata("https://api.instagram.com/v1/users/1480935606/?access_token={$accesstoken}");
-			echo '<pre>';
-			print_r($curlreturn);
-			echo '</pre>';
-		}
-		else if (isset($_POST['recentmedia']))
-		{
-			echo 'recent media set';
-		}
-		else if (isset($_POST['recentmediauser']))
-		{
-			echo 'recent media user set';
-		}
-		else if (isset($_POST['recentlikes']))
-		{
+		$curlreturn = curldata("https://api.instagram.com/v1/users/1480935606/?access_token={$accesstoken}");
+		echo '<pre>';
+		print_r($curlreturn);
+		echo '</pre>';
+	}
+	else if (isset($_POST['recentmedia']))
+	{
+		echo 'recent media set';
+	}
+	else if (isset($_POST['recentmediauser']))
+	{
+		echo 'recent media user set';
+	}
+	else if (isset($_POST['recentlikes']))
+	{
 
-		}
-		else if (isset($_POST['searchuser']))
-		{
+	}
+	else if (isset($_POST['searchuser']))
+	{
 
-		}
+	}else if (isset($_POST['logout']))
+	{
+		session_destroy();
+		$_SESSION = array();
 	}
 
 	function curldata($urlcurl, $data = array())
@@ -100,7 +103,4 @@
 	{
 		owndata();
 		include_once 'insta.php';
-
-		session_destroy();
-		$_SESSION = array();
 	}

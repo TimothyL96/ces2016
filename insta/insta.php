@@ -86,6 +86,7 @@
 			<input type="submit" name="recentmediauser" value="Recent media of user"">
 			<input type="submit" name="recentlikes" value="Recent liked Insta"">
 			<input type="submit" name="searchuser" value="Search users"">
+			<input type="submit" name="logout" value="Logout"">
 		</form>
 	</body>
 </html>
