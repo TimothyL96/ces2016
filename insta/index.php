@@ -24,6 +24,7 @@
 		$curlreturn = curldata("https://api.instagram.com/oauth/access_token", $data);
 
 		$accesstoken = $curlreturn['access_token'];
+		$_SESSION['accesstoken'] = $accesstoken;
 		$userid = $curlreturn['user']['id'];
 		$username = $curlreturn['user']['username'];
 		$userprofilepic = $curlreturn['user']['profile_picture'];
@@ -31,28 +32,32 @@
 		$userbio = $curlreturn['user']['bio'];
 		$userwebsite = $curlreturn['user']['website'];
 	}
-	else if (isset($_POST['finduser']))
+	else if (!empty($_SESSION['accesstoken']))
 	{
-		$curlreturn = curldata("https://api.instagram.com/v1/users/1480935606/?access_token={$accesstoken}");
-		echo '<pre>';
-		print_r($curlreturn);
-		echo '</pre>';
-	}
-	else if (isset($_POST['recentmedia']))
-	{
-		echo 'recent media set';
-	}
-	else if (isset($_POST['recentmediauser']))
-	{
-		echo 'recent media user set';
-	}
-	else if (isset($_POST['recentlikes']))
-	{
+		$accesstoken = $_SESSION['accesstoken'];
+		if (isset($_POST['finduser']))
+		{
+			$curlreturn = curldata("https://api.instagram.com/v1/users/1480935606/?access_token={$accesstoken}");
+			echo '<pre>';
+			print_r($curlreturn);
+			echo '</pre>';
+		}
+		else if (isset($_POST['recentmedia']))
+		{
+			echo 'recent media set';
+		}
+		else if (isset($_POST['recentmediauser']))
+		{
+			echo 'recent media user set';
+		}
+		else if (isset($_POST['recentlikes']))
+		{
 
-	}
-	else if (isset($_POST['searchuser']))
-	{
+		}
+		else if (isset($_POST['searchuser']))
+		{
 
+		}
 	}
 
 	function curldata($urlcurl, $data = array())
@@ -79,15 +84,21 @@
 		return $jsonresult;
 	}
 
-	if (!isset($code))
-		include_once 'login.php';
-	else if (!empty($accesstoken))
+	function owndata()
 	{
 		$curlreturn = curldata("https://api.instagram.com/v1/users/self/?access_token={$accesstoken}");
 		$usermedia = $curlreturn['data']['counts']['media'];
 		$userfollows = $curlreturn['data']['counts']['follows'];
 		$userfollower = $curlreturn['data']['counts']['followed_by'];
+	}
 
+	if (!isset($code))
+	{
+		include_once 'login.php';
+	}
+	else if (!empty($accesstoken))
+	{
+		owndata();
 		include_once 'insta.php';
 
 		session_destroy();
