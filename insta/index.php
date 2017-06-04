@@ -29,7 +29,8 @@
 		if (curl_errno($accesstoken))
 			die("Error: 0x0000TK. Contact administrator.");
 
-		echo $result;
+		$jsonresult = json_decode($result);
+		print_r($jsonresult);
 	}
 	if (!isset($code))
 		include_once 'login.php';
