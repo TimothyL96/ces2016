@@ -1,8 +1,11 @@
 <?php
 	require_once 'config.php';
 
-	$url = "https://api.instagram.com/oauth/authorize/?client_id={$clientID}&redirect_uri={$clientRedirect}&response_type=code";
-	header("Location: {$url}");
+	function loginInsta()
+	{
+		$url = "https://api.instagram.com/oauth/authorize/?client_id={$clientID}&redirect_uri={$clientRedirect}&response_type=code";
+		header("Location: {$url}");
+	}
 
 	/*
 		curl -F 'client_id=CLIENT_ID' \

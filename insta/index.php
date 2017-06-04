@@ -14,8 +14,8 @@
 		<title>Instagram API TEST</title>
 	</head>
 	<body>
-		<form method="GET" action="<?= $url; ?>">
-			<input type="submit" name="submit" value="LOGIN Instagram">
+		<form method="GET" action="">
+			<input type="submit" name="submit" value="LOGIN Instagram" onclick="<?= loginInsta(); ?>">
 		</form>
 	</body>
 </html>
