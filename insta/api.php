@@ -3,6 +3,7 @@
 
 	if (isset($_POST['login']))
 	{
+		echo 'done';
 		function loginInsta()
 		{
 			$url = "https://api.instagram.com/oauth/authorize/?client_id={$clientID}&redirect_uri={$clientRedirect}&response_type=code";
