@@ -22,7 +22,7 @@
 		$userbio = $curlreturn['user']['bio'];
 		$userwebsite = $curlreturn['user']['website'];
 
-		echo $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
+		echo "aaccess token : " . $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
 	}
 
 	function curldata($urlcurl = "", $data = array())
