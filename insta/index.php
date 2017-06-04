@@ -90,6 +90,9 @@
 		if (curl_errno($curlinsta))
 			die("Error: 0x000CRL. Contact administrator.");
 
+		echo '<pre>';
+		print_r($result);
+		echo '</pre>';
 		$jsonresult = json_decode($result, TRUE);
 		return $jsonresult;
 	}
