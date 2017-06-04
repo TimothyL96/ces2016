@@ -31,50 +31,20 @@
 		$userfullname = $curlreturn['user']['full_name'];
 		$userbio = $curlreturn['user']['bio'];
 		$userwebsite = $curlreturn['user']['website'];
-
-		echo "access token : " . $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
-	}
-
-	if (!isset($code))
-		include_once 'login.php';
-
-	if (!empty($accesstoken))
-	{
-		//$curlreturn = curldata("https://api.instagram.com/v1/users/self/?access_token={$accesstoken}");
-
-		echo 'accses token not empty!\r\n';
-		$urlcurl = "https://api.instagram.com/v1/users/self/?access_token={$accesstoken}";
-		$curlinsta = curl_init();
-		$options = array(
-			CURLOPT_URL => $urlcurl,
-			CURLOPT_HEADER => false,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_POSTFIELDS => $data
-		);
-		curl_setopt_array($curlinsta, $options);
-
-		$result = curl_exec($curlinsta);
-		curl_close($curlinsta);
-
-		if (curl_errno($curlinsta))
-			die("Error: 0x000CRL. Contact administrator.");
-
-		$jsonresult = json_decode($result, TRUE);
-
-		print_r($jsonresult);
-		session_destroy();
-		$_SESSION = array();
 	}
 
 	function curldata($urlcurl, $data = array())
 	{
 		$curlinsta = curl_init();
-		$options = array(
-			CURLOPT_URL => $urlcurl,
-			CURLOPT_HEADER => false,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_POSTFIELDS => $data
-		);
+
+		if (!empty($data))
+		{
+			$options = array(CURLOPT_URL => $urlcurl, CURLOPT_HEADER => FALSE, CURLOPT_RETURNTRANSFER => TRUE, CURLOPT_POSTFIELDS => $data);
+		}
+		else
+		{
+			$options = array(CURLOPT_URL => $urlcurl, CURLOPT_HEADER => FALSE, CURLOPT_RETURNTRANSFER => TRUE);
+		}
 		curl_setopt_array($curlinsta, $options);
 
 		$result = curl_exec($curlinsta);
@@ -85,4 +55,16 @@
 
 		$jsonresult = json_decode($result, TRUE);
 		return $jsonresult;
+	}
+
+	if (!isset($code))
+		include_once 'login.php';
+
+	if (!empty($accesstoken))
+	{
+		$curlreturn = curldata("https://api.instagram.com/v1/users/self/?access_token={$accesstoken}");
+		print_r($curlreturn);
+
+		session_destroy();
+		$_SESSION = array();
 	}
