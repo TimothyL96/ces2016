@@ -60,6 +60,7 @@
 		$jsonresult = json_decode($result, TRUE);
 
 		print_r($jsonresult);
+		session_destroy();
 	}
 
 	function curldata($urlcurl, $data = array())
