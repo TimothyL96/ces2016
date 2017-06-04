@@ -13,7 +13,7 @@
 	{
 		require 'config.php';
 
-		$code = isset($_SESSION['code']);
+		$code = $_SESSION['code'];
 		$data = [
 			'client_id' => $clientID,
 			'client_secret' => $clientSecret,
