@@ -102,7 +102,7 @@
 		return $owndatareturn;
 	}
 
-	if (!isset($code))
+	if (empty($code))
 	{
 		include_once 'login.php';
 	}
