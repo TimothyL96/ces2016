@@ -22,6 +22,9 @@
 		$result = curl_exec($accesstoken);
 		curl_close($accesstoken);
 
+		if (curl_errno($accesstoken))
+			die("Error: 0x0000TK. Contact administrator.");
+
 		print_r($result);
 	}
 	if (!isset($code))
