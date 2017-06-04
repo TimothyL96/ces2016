@@ -33,7 +33,7 @@
 		$_SESSION['accesstoken'] = $accesstoken;
 		$userid = $curlreturn['user']['id'];
 		$username = $curlreturn['user']['username'];
-		$_SESSION['$username'] = $accesstoken;
+		$_SESSION['$username'] = $username;
 		$userprofilepic = $curlreturn['user']['profile_picture'];
 		$userfullname = $curlreturn['user']['full_name'];
 		$userbio = $curlreturn['user']['bio'];
