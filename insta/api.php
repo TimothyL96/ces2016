@@ -3,13 +3,9 @@
 
 	if (isset($_POST['login']))
 	{
-		function loginInsta()
-		{
-			$url = "https://api.instagram.com/oauth/authorize/?client_id={$clientID}&redirect_uri={$clientRedirect}&response_type=code";
-			echo 'done : ' . $url;
-			header("Location: {$url}");
-			exit();
-		}
+		$url = "https://api.instagram.com/oauth/authorize/?client_id={$clientID}&redirect_uri={$clientRedirect}&response_type=code";
+		header("Location: {$url}");
+		exit();
 	}
 
 	/*
