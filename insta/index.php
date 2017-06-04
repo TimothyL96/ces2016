@@ -1,11 +1,13 @@
 <?php
+	session_start();
 	if (isset($_GET['code']))
 	{
+		$_SESSION['code'] = $_GET['code'];
 		$url = strtok($_SERVER["REQUEST_URI"], '?');
 		header("Location: {$url}");
 		exit();
 	}
-	if (isset($_GET['code']))
+	if (isset($_SESSION['code']))
 	{
 		require 'config.php';
 
