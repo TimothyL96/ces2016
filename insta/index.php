@@ -93,6 +93,7 @@
 	function owndata()
 	{
 		$curlreturn = curldata("https://api.instagram.com/v1/users/self/?access_token={$accesstoken}");
+		print_r($curlreturn);
 		$owndatareturn[] = $curlreturn['data']['counts']['media'];
 		$owndatareturn[] = $curlreturn['data']['counts']['follows'];
 		$owndatareturn[] = $curlreturn['data']['counts']['followed_by'];
@@ -109,7 +110,6 @@
 		$usermedia = $owndatareturn[0];
 		$userfollows = $owndatareturn[1];
 		$userfollower = $owndatareturn[2];
-		print_r($owndatareturn);
 
 		include_once 'insta.php';
 	}
