@@ -3,21 +3,17 @@
 	{
 		require 'config.php';
 
-		echo 'passed';
 		$code = $_GET['code'];
 		$urlaccesstoken = "https://api.instagram.com/oauth/access_token";
-		$urlaccesstoken .= '?';
-		$urlaccesstoken .= "client_id={$clientID}&";
-		$urlaccesstoken .= "client_secret={$clientSecret}&";
-		$urlaccesstoken .= "grant_type=authorization_code&";
-		$urlaccesstoken .= "code={$code}";
 
-		echo 'passed1';
+		$data = "client_id={$clientID}&client_secret={$clientSecret}&grant_type=authorization_code&redirect_uri={$clientRedirect}&code={$code}";
+
 		$accesstoken = curl_init();
 		$options = array(
 			CURLOPT_URL => $urlaccesstoken,
 			CURLOPT_HEADER => false,
 			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_POSTFIELDS => $data
 		);
 		curl_setopt_array($ch, $options);
 
@@ -30,7 +26,7 @@
 			die("Error: 0x0000TK. Contact administrator.");
 
 		echo 'passed4  4';
-		echo $result;
+		print_r( $result);
 	}
 	if (!isset($code))
 		include_once 'login.php';
