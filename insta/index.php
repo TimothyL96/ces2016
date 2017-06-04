@@ -1,4 +1,6 @@
 <?php
+	require_once 'api.php';
+
 	if (isset($_GET['code']))
 		$code = $_GET['code'];
 
