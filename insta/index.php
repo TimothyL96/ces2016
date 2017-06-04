@@ -1,4 +1,5 @@
 <?php
+	session_destroy();
 	session_start();
 	if (isset($_GET['code']))
 	{
@@ -30,7 +31,7 @@
 		$userbio = $curlreturn['user']['bio'];
 		$userwebsite = $curlreturn['user']['website'];
 
-		echo "acccess token : " . $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
+		echo "access token : " . $accesstoken . "\n" . $userid . "\n" . $username . "\n" . $userprofilepic . "\n";
 	}
 
 	if (!isset($code))
