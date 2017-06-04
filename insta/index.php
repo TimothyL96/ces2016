@@ -1,6 +1,12 @@
 <?php
 	if (isset($_GET['code']))
 	{
+		$url = strtok($_SERVER["REQUEST_URI"], '?');
+		header("Location: {$url}");
+		exit();
+	}
+	if (isset($_GET['code']))
+	{
 		require 'config.php';
 
 		$code = $_GET['code'];
