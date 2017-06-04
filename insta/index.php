@@ -6,7 +6,15 @@
 		$code = $_GET['code'];
 		$urlaccesstoken = "https://api.instagram.com/oauth/access_token";
 
-		$data = "client_id={$clientID}&client_secret={$clientSecret}&grant_type=authorization_code&redirect_uri={$clientRedirect}&code={$code}";
+		//$data = "client_id={$clientID}&client_secret={$clientSecret}&grant_type=authorization_code&redirect_uri={$clientRedirect}&code={$code}";
+
+		$data = [
+			'client_id' => $clientID,
+			'client_secret' => $clientSecret,
+			'grant_type' => 'authorization_code',
+			'redirect_uri' => $clientRedirect,
+			'code' => $code
+		];
 
 		$accesstoken = curl_init();
 		$options = array(
@@ -17,7 +25,7 @@
 		);
 		curl_setopt_array($ch, $options);
 
-		echo 'passed2';
+		echo 'passed22222 ';
 		$result = curl_exec($accesstoken);
 		curl_close($accesstoken);
 
@@ -27,7 +35,7 @@
 
 		echo 'passed4';
 		echo 'error : ' . curl_error($accesstoken);
-		print_r( $result);
+		print_r($result);
 	}
 	if (!isset($code))
 		include_once 'login.php';
