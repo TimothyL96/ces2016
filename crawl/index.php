@@ -6,7 +6,6 @@
 	 * Time: 3:05 PM
 	 */
 /*
-	$url = "http://www.o2olr.com/shoplist2.php?cat=all&country=1&id=all";
 
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_POST, FALSE);
